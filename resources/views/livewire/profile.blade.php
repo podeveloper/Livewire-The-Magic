@@ -12,4 +12,19 @@
             Successfully Updated!
         </p>
     @endif
+
+    <br><br>
+
+    <div>
+        <button wire:click.prevent="toggle">Show / Hide</button>
+        <br><br>
+
+        @if($toggle)
+            <div>
+                Toggle Area
+            </div>
+        @endif
+    </div>
+
+
 </form>

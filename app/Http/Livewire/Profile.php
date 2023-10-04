@@ -13,6 +13,8 @@ class Profile extends Component
     public $user;
     public $user_id;
     public $success = false;
+    public $toggle = false;
+
     protected $rules = [
         'user.name' => 'min:3',
         'user.email' => 'email',
@@ -39,6 +41,11 @@ class Profile extends Component
     public function updatedUserName($name)
     {
           $this->validateOnly('user.name');
+    }
+
+    public function toggle()
+    {
+        $this->toggle = !$this->toggle;
     }
 
 }
