@@ -10,7 +10,7 @@ class Profile extends Component
 
     public $name;
     public $email;
-    public User $user;
+    public $user;
     public $user_id;
     public $success = false;
     protected $rules = [
@@ -20,7 +20,7 @@ class Profile extends Component
 
     public function mount()
     {
-        $this->user = User::find($this->user_id);
+        $this->user = User::find(request()->user_id);
     }
     public function render()
     {
