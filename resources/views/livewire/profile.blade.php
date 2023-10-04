@@ -16,7 +16,7 @@
     <br><br>
 
     <div>
-        <button wire:click.prevent="$set('show', 'true')">Show / Hide</button>
+        <button wire:click.prevent="$toggle('show')">Show / Hide</button>
         <br><br>
 
         @if($show)
