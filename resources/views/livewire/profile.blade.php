@@ -1,6 +1,6 @@
 <form wire:submit.prevent="updateprofile">
     <label for="">Name</label><br><br>
-    <input type="text" wire:model="user.name" wire:keydown="checkname">
+    <input type="text" wire:model="user.name">
     <br><br>
     @if($errors->has('user.name')) <p style="color:red">{{ $errors->first('user.name') }}</p> @endif
     <label for="">Email</label><br><br>
