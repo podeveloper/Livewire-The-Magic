@@ -35,12 +35,9 @@ class Profile extends Component
         $this->success = true;
     }
 
-    public function updated($name, $value)
+    public function updatedUserName($name)
     {
-        if ($name == 'user.name')
-        {
-          $this->validate(['user.name' => 'min:3']);
-        }
+          $this->validateOnly('user.name');
     }
 
 }
