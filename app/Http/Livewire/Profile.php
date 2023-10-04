@@ -10,16 +10,16 @@ class Profile extends Component
 
     public $name;
     public $email;
+    public User $user;
     public $success = false;
     protected $rules = [
-        'name' => 'min:3',
-        'email' => 'email'
+        'user.name' => 'min:3',
+        'user.email' => 'email',
     ];
 
     public function mount()
     {
-        $this->name = User::first()->name;
-        $this->email = User::first()->email;
+        $this->user = User::first();
     }
     public function render()
     {
@@ -30,10 +30,7 @@ class Profile extends Component
     {
         $this->validate();
 
-        User::first()->update([
-            'name' => $this->name,
-            'email' => $this->email
-        ]);
+        $this->user->save();
 
         $this->success = true;
     }
