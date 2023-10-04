@@ -17,8 +17,8 @@ class IncreasableText extends Component
         return view('livewire.increasable-text');
     }
 
-    public function increaseCount()
+    public function increaseCount($number)
     {
-        $this->count++;
+        $this->count += $number;
     }
 }
