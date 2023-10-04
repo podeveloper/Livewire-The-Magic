@@ -11,6 +11,7 @@ class Profile extends Component
     public $name;
     public $email;
     public User $user;
+    public $user_id;
     public $success = false;
     protected $rules = [
         'user.name' => 'min:3',
@@ -19,7 +20,7 @@ class Profile extends Component
 
     public function mount()
     {
-        $this->user = User::first();
+        $this->user = User::find($this->user_id);
     }
     public function render()
     {

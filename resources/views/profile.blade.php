@@ -9,7 +9,7 @@
     @livewireStyles
 </head>
 <body>
-    @livewire('profile')
+    @livewire('profile', ['user_id' => 1])
     @livewireScripts
 </body>
 </html>
