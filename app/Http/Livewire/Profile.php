@@ -36,6 +36,8 @@ class Profile extends Component
         $this->user->save();
 
         $this->success = true;
+
+        $this->emit('profileUpdated');
     }
 
     public function updatedUserName($name)

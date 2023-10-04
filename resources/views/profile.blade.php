@@ -10,6 +10,8 @@
 </head>
 <body>
     @livewire('profile')
+    <br>
+    @livewire('increasable-text')
     @livewireScripts
 </body>
 </html>
