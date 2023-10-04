@@ -11,6 +11,10 @@ class Profile extends Component
     public $name;
     public $email;
     public $success = false;
+    protected $rules = [
+        'name' => 'min:3',
+        'email' => 'email'
+    ];
 
     public function mount()
     {
@@ -24,6 +28,8 @@ class Profile extends Component
 
     public function updateprofile()
     {
+        $this->validate();
+
         User::first()->update([
             'name' => $this->name,
             'email' => $this->email
