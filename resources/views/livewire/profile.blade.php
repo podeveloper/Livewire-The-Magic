@@ -16,10 +16,10 @@
     <br><br>
 
     <div>
-        <button wire:click.prevent="toggle">Show / Hide</button>
+        <button wire:click.prevent="$toggle('show')">Show / Hide</button>
         <br><br>
 
-        @if($toggle)
+        @if($show)
             <div>
                 Toggle Area
             </div>
