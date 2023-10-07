@@ -1,3 +1,5 @@
 @extends('layouts.base')
-@livewire('products')
+<div class="container my-5">
+    @livewire('products')
+</div>
 
