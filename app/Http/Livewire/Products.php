@@ -25,7 +25,6 @@ class Products extends Component
 
     public function render()
     {
-
         $products = Product::with('category')
             ->when( $this->searchQuery != '', function ($query){
                $query->where('name','like','%'.$this->searchQuery.'%');

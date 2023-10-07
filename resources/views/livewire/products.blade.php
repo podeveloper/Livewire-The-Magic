@@ -18,6 +18,9 @@
                 </div>
             </div>
             <hr>
+            <div class="alert alert-success col-md-12" wire:loading>
+                Loading data...
+            </div>
             <table class="table">
                 @foreach($products as $product)
                     <tr>
