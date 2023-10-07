@@ -6,7 +6,7 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-md-3">
-                    <input type="text" class="form-control" wire:model="searchQuery" placeholder="Type a product name here">
+                    <input wire:model="searchQuery" type="text" class="form-control" placeholder="Type a product name here">
                 </div>
                 <div class="col-md-3">
                     <select wire:model="searchCategory" class="form-control">
@@ -18,7 +18,7 @@
                 </div>
             </div>
             <hr>
-            <div class="alert alert-success col-md-12" wire:loading>
+            <div wire:loading class="alert alert-success col-md-12">
                 Loading data...
             </div>
             <table class="table">
@@ -28,7 +28,9 @@
                         <td>{{$product->category->name}}</td>
                         <td>
                             <button class="btn btn-primary">Edit</button>
-                            <button class="btn btn-danger">Delete</button>
+                            <button onclick="return confirm('Are you sure?') || event.stopImmediatePropagation()"
+                                    wire:click="deleteProduct({{$product->id}})"
+                                    class="btn btn-danger">Delete</button>
                         </td>
                     </tr>
                 @endforeach

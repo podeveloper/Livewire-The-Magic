@@ -39,8 +39,8 @@ class Products extends Component
         ]);
     }
 
-    public function searchName()
+    public function deleteProduct($id)
     {
-
+        Product::find($id)->delete();
     }
 }
